@@ -184,7 +184,7 @@ body {
 
 .testimonials {
   display: grid;
-  gap: var(--space-200);
+  gap: clamp(var(--space-200), -0.1429rem + 2.381vw, var(--space-400));
 }
 
 .testimonials__card {
