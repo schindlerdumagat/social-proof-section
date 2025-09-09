@@ -254,6 +254,11 @@ body {
       width: 60%;
     }
 
+    .reviews__item {
+      max-width: 27.875rem;
+      width: 100%;
+    }
+
     .reviews__item:nth-child(1) {
       align-self: flex-start;
     }
