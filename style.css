@@ -216,6 +216,7 @@ body {
 
 .testimonials__description {
   text-wrap: pretty;
+  line-height: 1.3;
 }
 
 @media screen and (min-width: 48em) {
