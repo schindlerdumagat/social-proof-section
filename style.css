@@ -243,6 +243,7 @@ body {
     .hero__layout {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
     }
     
     .hero__header {
