@@ -1,0 +1,285 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1;
+}
+
+h1, h2 {
+  line-height: 0.85; /* Set shorter line heights on headings and interactive elements */
+  /* text-wrap: balance; Balance text wrapping on headings */
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* FONTS */
+
+/* league-spartan-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/league-spartan-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* league-spartan-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/league-spartan-v14-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* league-spartan-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/league-spartan-v14-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+
+    /* COLORS */
+
+    --clr-white: #FFFFFF;
+    --clr-purple-100: #F7F2F7;
+    --clr-purple-300: #927B91;
+    --clr-purple-900: #512051;
+    --clr-pink-400: #EE69A4;
+    --clr-orange-400: #EF9546;
+    --clr-transparent: transparent;
+
+    /* TYPOGRAPHY */
+
+    --ff-main: "League Spartan", sans-serif;
+    --fs-body: 1.063rem;
+
+    /* SPACINGS */
+
+    --space-0: 0;
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-600: 3rem;
+    --space-800: 4rem;
+    --space-1000: 5rem;
+    --space-1200: 6rem;
+    --space-1425: 7.25rem;
+
+    /* BORDER RADIUS */
+
+    --rounded-sm: 8px;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--ff-main);
+    font-size: var(--fs-body);
+    color: var(--clr-purple-300);
+    background-color: var(--clr-white);
+    padding-inline: var(--space-300);
+    padding-block: clamp(var(--space-1000), 4.2077rem + 3.3803vw, var(--space-1425));
+    background-image: url("./images/bg-pattern-top-mobile.svg"),
+                    url("./images/bg-pattern-bottom-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    background-size: auto, contain;
+}
+
+.hero {
+    max-inline-size: 28.313rem;
+}
+
+.hero__layout {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(var(--space-400), 1.5229rem + 2.0356vw, var(--space-500));
+    margin-block-end: var(--space-600);
+}
+
+.hero__header {
+    text-align: center;
+}
+
+.hero__title {
+    color: var(--clr-purple-900);
+    font-size: clamp(2.5rem, 1.5458rem + 4.0712vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-block-end: var(--space-200);
+}
+
+.hero__description {
+    font-size: 1.188rem;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.6px;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+    max-inline-size: 33.875rem;
+}
+
+.reviews__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(var(--space-200), 0.0458rem + 4.0712vw, var(--space-400));
+  padding: var(--space-200) var(--space-400);
+  border-radius: var(--rounded-sm);
+  background-color: var(--clr-purple-100);
+}
+
+.reviews__stars {
+    display: flex;
+    gap: var(--space-100);
+}
+
+.reviews__description {
+  color: var(--clr-purple-900);
+  font-weight: 700;
+}
+
+.testimonials {
+  display: grid;
+  gap: var(--space-200);
+}
+
+.testimonials__card {
+  color: var(--clr-white);
+  background-color: var(--clr-purple-900);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-400);
+}
+
+.testimonials__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  margin-block-end: var(--space-400);
+}
+
+.testimonials__img {
+  border-radius: 999px;
+}
+
+.testimonials__name {
+  font-size: inherit;
+}
+
+.testimonials__status {
+  color: var(--clr-pink-400);
+  font-style: normal;
+}
+
+.testimonials__description {
+  text-wrap: pretty;
+}
+
+@media screen and (min-width: 48em) {
+    body {
+        background-image: url("./images/bg-pattern-top-mobile.svg"), 
+                        url("./images/bg-pattern-bottom-desktop.svg");
+    }
+
+    .reviews__item {
+      flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    body {
+        background-image: url("./images/bg-pattern-top-desktop.svg"), 
+                        url("./images/bg-pattern-bottom-desktop.svg");
+        background-size: auto, auto;
+    }
+
+    .hero {
+      max-inline-size: clamp(53rem, 12.6923rem + 62.9808vw, 69.375rem);
+    }
+
+    .hero__layout {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .hero__header {
+      text-align: start;
+      width: 40%;
+    }
+
+    .reviews {
+      width: 60%;
+    }
+
+    .reviews__item:nth-child(1) {
+      align-self: flex-start;
+    }
+
+    .reviews__item:nth-child(2) {
+      align-self: center;
+    }
+    .reviews__item:nth-child(3) {
+      align-self: flex-end;
+    }
+
+    .testimonials {
+      max-height: 16rem;
+      height: 100vh;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials__card:nth-child(1) {
+      align-self: flex-start;
+    }
+
+    .testimonials__card:nth-child(2) {
+      align-self: center;
+    }
+
+    .testimonials__card:nth-child(3) {
+      align-self: flex-end;
+    }
+}
