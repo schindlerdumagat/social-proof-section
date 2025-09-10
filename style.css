@@ -1,3 +1,4 @@
+/* CSS RESETS */
 
 /* Box sizing rules */
 *,
@@ -34,7 +35,7 @@ body {
 
 h1, h2 {
   line-height: 0.85; /* Set shorter line heights on headings and interactive elements */
-  /* text-wrap: balance; Balance text wrapping on headings */
+  text-wrap: balance; /* Balance text wrapping on headings */
 }
 
 /* Make images easier to work with */
@@ -70,6 +71,8 @@ picture {
   font-weight: 700;
   src: url('../fonts/league-spartan-v14-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+/* CUSTOM VARIABLES */
 
 :root {
 
@@ -109,31 +112,31 @@ picture {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: var(--ff-main);
-    font-size: var(--fs-body);
-    color: var(--clr-purple-300);
-    background-color: var(--clr-white);
-    padding-inline: var(--space-300);
-    padding-block: clamp(var(--space-1000), 4.2077rem + 3.3803vw, var(--space-1425));
-    background-image: url("./images/bg-pattern-top-mobile.svg"),
+  font-family: var(--ff-main);
+  font-size: var(--fs-body);
+  color: var(--clr-purple-300);
+  background-color: var(--clr-white);
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
                     url("./images/bg-pattern-bottom-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: top left, bottom right;
-    background-size: auto, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+  background-size: auto, contain;
+  padding-inline: var(--space-300);
+  padding-block: clamp(var(--space-1000), 2.8531rem + 9.1603vw, var(--space-1425));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero {
-    max-inline-size: 28.313rem;
+    max-inline-size: 28.813rem;
 }
 
 .hero__layout {
     display: flex;
     flex-direction: column;
     gap: clamp(var(--space-400), 1.5229rem + 2.0356vw, var(--space-500));
-    margin-block-end: var(--space-600);
+    margin-block-end: clamp(var(--space-600), 1.8571rem + 2.381vw, var(--space-800));
 }
 
 .hero__header {
@@ -141,11 +144,10 @@ body {
 }
 
 .hero__title {
-    color: var(--clr-purple-900);
-    font-size: clamp(2.5rem, 1.5458rem + 4.0712vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -2px;
-    margin-block-end: var(--space-200);
+  color: var(--clr-purple-900);
+  font-size: clamp(2.5rem, 1.5458rem + 4.0712vw, 3.5rem);
+  letter-spacing: -2px;
+  margin-block-end: var(--space-200);
 }
 
 .hero__description {
@@ -159,17 +161,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--space-200);
-    max-inline-size: 33.875rem;
 }
 
 .reviews__item {
+  padding: var(--space-200) var(--space-400);
+  border-radius: var(--rounded-sm);
+  background-color: var(--clr-purple-100);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: clamp(var(--space-200), 0.0458rem + 4.0712vw, var(--space-400));
-  padding: var(--space-200) var(--space-400);
-  border-radius: var(--rounded-sm);
-  background-color: var(--clr-purple-100);
 }
 
 .reviews__stars {
@@ -179,7 +180,6 @@ body {
 
 .reviews__description {
   color: var(--clr-purple-900);
-  font-weight: 700;
 }
 
 .testimonials {
@@ -202,11 +202,12 @@ body {
 }
 
 .testimonials__img {
-  border-radius: 999px;
+  border-radius: 50%;
 }
 
 .testimonials__name {
   font-size: inherit;
+  line-height: 1;
 }
 
 .testimonials__status {
@@ -215,8 +216,9 @@ body {
 }
 
 .testimonials__description {
-  text-wrap: pretty;
   line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.3px;
 }
 
 @media screen and (min-width: 48em) {
@@ -253,7 +255,7 @@ body {
     }
 
     .reviews {
-      width: 60%;
+      width: 51%;
     }
 
     .reviews__item {
@@ -273,20 +275,14 @@ body {
     }
 
     .testimonials {
-      max-height: 16rem;
-      height: 100vh;
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .testimonials__card:nth-child(1) {
-      align-self: flex-start;
-    }
-
     .testimonials__card:nth-child(2) {
-      align-self: center;
+      transform: translateY(clamp(0rem, -2.4615rem + 3.8462vw, 1rem));
     }
 
     .testimonials__card:nth-child(3) {
-      align-self: flex-end;
+      transform: translateY(clamp(0rem, -4.9231rem + 7.6923vw, 2rem));
     }
 }
